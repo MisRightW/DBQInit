@@ -54,9 +54,7 @@ public class DBHelper {
         List<Entity> tables = db.query("SHOW TABLES;");
         tables.stream().map(t -> {
             return t.get("tables_in_" + dbName).toString();
-        }).collect(Collectors.toList()).forEach(t -> {
-            CONFIG_LIST.add(new TempBean().setTable(t));
-        });
+        }).collect(Collectors.toList()).forEach(t -> CONFIG_LIST.add(new TempBean().setTable(t)));
         // 绑定自定义配置
 
         FileWriter sqlFileWriter = FileWriter.create(new File(FILE_NAME));
@@ -122,7 +120,6 @@ public class DBHelper {
     }
 
     @Data
-    @Accessors(chain = true)
     static class TempBean {
         /**
          * 表名
@@ -136,6 +133,14 @@ public class DBHelper {
          * 是否需要 insert 语句，默认需要
          */
         public Boolean insert = true;
+        /**
+         * 需要的初始数据是多少条
+         */
+        public int size = 10;
+        /**
+         * 需要初始化数据的条件
+         */
+        public String condition;
     }
 
 }
