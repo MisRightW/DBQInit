@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DBQInit.iml" filepath="$PROJECT_DIR$/.idea/DBQInit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db-elf/db-elf.iml" filepath="$PROJECT_DIR$/db-elf/db-elf.iml" />
+    </modules>
+  </component>
+</project>
